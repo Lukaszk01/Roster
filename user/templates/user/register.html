@@ -1,4 +1,6 @@
+
 {% extends "main/base.html" %}
+{% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
     <div class="content-section">
@@ -9,6 +11,7 @@
                 Already Have An Account? <a class="ml-2" href="#">Sign In</a>
             </small>
         </div>
+        <div class="button">Hello</div>
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Join Today</legend>
                 {{ form|crispy }}
@@ -19,7 +22,7 @@
         </form>
         <div class="border-top pt-3">
             <small class="text-muted">
-                Already Have An Account? <a class="ml-2" href="#">Sign In</a>
+                Already Have An Account? <a class="ml-2" href="{%  url 'login' %}">Sign In</a>
             </small>
         </div>
     </div>
