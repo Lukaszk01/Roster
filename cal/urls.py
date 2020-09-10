@@ -3,6 +3,6 @@ from . import views
 
 app_name = 'cal'
 urlpatterns = [
-    # url('index/', views.index, name='index'),
-    url('calendar/', views.CalendarView.as_view(), name='calendar'), # here
+    url(r'^index/$', views.index, name='index'),
+    url(r'^calendar/$', views.CalendarView.as_view(), name='calendar'), # here
 ]

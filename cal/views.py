@@ -7,6 +7,11 @@ from django.utils.safestring import mark_safe
 from .models import *
 from .utils import Calendar
 
+# Create your views here.
+
+def index(request):
+    return HttpResponse('hello')
+
 class CalendarView(generic.ListView):
     model = Event
     template_name = 'cal/calendar.html'
