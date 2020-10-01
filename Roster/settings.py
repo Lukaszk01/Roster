@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms',
+    # 'crispy_forms',
+    'cal.apps.CalConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -125,4 +127,9 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'roster-home'
 LOGIN_URL = 'login'
+
+
+
 STATIC_URL = '/static/'
+VENV_PATH = os.path.dirname(BASE_DIR)
+STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
