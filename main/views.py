@@ -11,4 +11,4 @@ def about(request):
 def testView(request):
     current_user = request.user
     context = {'username': current_user.username, 'current_user': current_user}
-    return render(request, 'main/test.html', context)
+    return render(request, 'main/test.vue', context)
