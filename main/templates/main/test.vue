@@ -4,11 +4,7 @@
   <div class="mt-4" id="app">
     <div>[[ message ]]</div>
 </div>
-{{ username|json_script:"username" }} 
-
-
-
-
+{{ username|json_script:"username" }}
 
 <script>
 var username = JSON.parse(document.getElementById('username').textContent);
