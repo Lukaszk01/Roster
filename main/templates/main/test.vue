@@ -7,7 +7,7 @@
 {{ username|json_script:"username" }}
 <div class="calculator">
 <div class="display">{{ current }}</div>
-</div?
+</div>
 <script>
 var username = JSON.parse(document.getElementById('username').textContent);
 var app = new Vue({
@@ -22,6 +22,14 @@ var app = new Vue({
         ]
       }
     },
+    methods: {
+    clear() {
+      this.current = '';
+    },
+    sign() {
+      this.current = this.current.charAt(0) === '-' ?
+      this.current.slice(1) : `-${this.current}`;
+    }
   delimiters: ["[[", "]]"],
   el: '#app',
   data: {
