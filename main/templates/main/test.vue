@@ -15,7 +15,7 @@
       </h3>
     <button @click="togglePetForm" class="btn btn-primary">Add New Pet</button>
 
-    <b-form @submit.prevent="handleSubmit" v-if="showPetForm">
+    <b-form @submit.prevent="handleSubmit" v-if="showForm">
       <b-form-group id="exampleInputGroup2" label="Pet's Name:" label-for="exampleInput2">
         <b-form-input
           id="exampleInput2"
@@ -47,16 +47,13 @@ var username = JSON.parse(document.getElementById('username').textContent);
 var app = new Vue({
   data() {
       return {
-
-        items: [
-          { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
-          { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
-          { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
-          { age: 38, first_name: 'Jami', last_name: 'Carney' }
-        ]
-      }
-    },
-  
+        showForm: false,
+        formData: {
+        name: '',
+        age: 0,
+        species: null
+      },
+      
 
   delimiters: ["[[", "]]"],
   el: '#app',
