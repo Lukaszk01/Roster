@@ -60,7 +60,14 @@ var app = new Vue({
   data: {
     message: 'Elo elo 320 vue is working on this app mdf! ' + username
   },
-});
+  methods: {
+    ...mapActions([
+      'addPet'
+    ]),
+    togglePetForm () {
+      this.showForm = !this.showForm
+    },
+};
 
 </script>
 <style scoped>
