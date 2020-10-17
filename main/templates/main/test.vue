@@ -1,5 +1,7 @@
 {% extends "main/base.html" %}
 {% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+
 
 <div id="staggered-list-demo">
   <input v-model="query">
@@ -17,6 +19,7 @@
       v-bind:data-index="index"
     >{{ item.msg }}</li>
   </transition-group>
+  
 </div>
 
 <script>
