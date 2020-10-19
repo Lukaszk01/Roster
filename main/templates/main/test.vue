@@ -32,10 +32,6 @@ new Vue({
       { msg: 'Jackie Chan' },
       { msg: 'Chuck Norris' },
       { msg: 'Jet Li' },
-      { msg: 'Jet Li' },
-      { msg: 'Jet Li' },
-      { msg: 'Jet Li' },
-      { msg: 'Jet Li' },
       { msg: 'Kung Fury' }
     ]
   },
