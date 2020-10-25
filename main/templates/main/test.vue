@@ -8,18 +8,6 @@
   <button v-on:click="say('what')">Say what</button>
 </div>
 
-<script>
-new Vue({
-  el: '#example-3',
-  methods: {
-    say: function (message) {
-      alert(message)
-    }
-  }
-})
-  
-}
-</script>
 </script>
 <style scoped>
   #staggered-list-demo {
