@@ -3,15 +3,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
 
 
-<span>Multiline message is:</span>
-<p style="white-space: pre-line;">{{ message }}</p>
-<br>
-<textarea v-model="message" placeholder="add multiple lines"></textarea>
-</script>
-<style scoped>
-  #staggered-list-demo {
-    color: pink;
-
+<div id="components-demo">
+  <button-counter></button-counter>
+</div>
+<script>
+export default {
+  Vue.component('button-counter', {
+  data: function () {
+    return {
+      count: 0
+    }
+  },
+  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+})
 }
-</style>
-{% endblock %}
+</script>
