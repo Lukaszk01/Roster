@@ -36,6 +36,9 @@
     <title>"Company" Employee list</title>
   </head>
   <body>
+      <div>
+        <h2 class="account-heading">Managers name: {{ user.username }}</h2>
+      </div>
     <div id="app" class="px-5 py-3">
       <b-navbar toggleable="lg" type="dark" variant="info" class="mb-2">
         <b-navbar-brand href="#"> searcher</b-navbar-brand>
@@ -102,6 +105,10 @@
         </b-table>
       </b-modal>
     </div>
+    <div class="button mt-3 mb-3 ml-3 mr-3">
+        <a href="{% url 'roster-home' %}"><button >Back</button></a>
+        
+      </div>
     <script>
       var app = new Vue({
         el: '#app',
