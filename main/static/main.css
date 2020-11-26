@@ -82,15 +82,9 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
-.button {
-  border: solid 1px black;
-  border-radius: 5px;
-  color: white;
-  background-color: purple;
 
-}
-.button {
-  color: red;
+a {
+  color: black;
 }
 .nav-item, .nav-link, .nav-link, .list-group-item, .list-group-item-light {
   border-radius: 5px;
