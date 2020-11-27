@@ -42,11 +42,14 @@
     <title>"Company" Employee list</title>
   </head>
   <body>
-    <div class="clearfix">
-        <a class="btn btn-info left" href="{% url 'cal:calendar' %}?{{ prev_month }}"> Previous Month </a>
-        <a class="btn btn-info right" href="{% url 'cal:calendar' %}?{{ next_month }}"> Next Month </a>
-        <a class="btn btn-info right" href="{% url 'cal:event_new' %}"> New Event </a>
+    <div class="mt-3 mb-3">
+        <div class="clearfix">
+            <a class="btn btn-info left" href="{% url 'cal:calendar' %}?{{ prev_month }}"> Previous Month </a>
+            <a class="btn btn-info right" href="{% url 'cal:calendar' %}?{{ next_month }}"> Next Month </a>
+            <a class="btn btn-info right" href="{% url 'cal:event_new' %}"> New Event </a>
+        </div>
     </div>
+    
       <div>
         <h2 class="account-heading">Managers name: {{ user.username }}</h2>
       </div>
@@ -208,5 +211,5 @@
 </html>
 
 
-{{ calendar }}
+{{ calendar }}  
 {% endblock content %}
