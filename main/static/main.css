@@ -86,14 +86,7 @@ a.article-title:hover {
   font-size: 2.5rem;
 }
 
-a {
-  color: black;
-}
 .nav-item, .nav-link, .nav-link, .list-group-item, .list-group-item-light {
   border-radius: 5px;
   box-shadow: 1px 1px 1px gray;
-}
-.mb-3, .my-3 {
-  height: 400px;
-  width: 600px;
 }
