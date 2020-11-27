@@ -11,6 +11,9 @@ h1, h2, h3, h4, h5, h6 {
 ul {
   margin: 0;
 }
+a {
+  color: black;
+}
 
 .bg-steel {
   background-color: #5f788a;
@@ -89,4 +92,8 @@ a {
 .nav-item, .nav-link, .nav-link, .list-group-item, .list-group-item-light {
   border-radius: 5px;
   box-shadow: 1px 1px 1px gray;
+}
+.mb-3, .my-3 {
+  height: 400px;
+  width: 600px;
 }
