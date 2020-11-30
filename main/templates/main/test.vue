@@ -18,4 +18,4 @@ export default {
 })
 }
 </script>
-{% endblock content %}
+{{% endblock content %}}

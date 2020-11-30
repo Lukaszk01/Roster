@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'crispy_forms',
     'cal.apps.CalConfig',
+    'schedule',
+    'djangobower',
+    'django'
 
 ]
 
@@ -67,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "django.template.context_processors.request",
             ],
         },
     },
@@ -122,6 +126,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+
+STATICFILES_FINDERS = (
+    'djangobower.finders.BowerFinder',
+)
+BOWER_COMPONENTS_ROOT = '/PROJECT_ROOT/components/'
+
+BOWER_INSTALLED_APPS = (
+    'jquery',
+    'jquery-ui',
+    'bootstrap'
+)
+
+
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
