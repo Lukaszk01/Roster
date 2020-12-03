@@ -7,6 +7,7 @@
 <body>
 <h2>Home</h2>
 <div class="container">
+  {% if user.is_authenticated %}
   <div class="row">
     <div class="col-2">
     <div class="button-main">
@@ -23,10 +24,13 @@
       <div class="button-main">
         <div class="btn btn-warning mt-3 mb-3">
         <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+
       </div>
     </div> 
   </div> 
 </div>
+{{ endblock }}
     </div>
 </div>
 {% endblock content %}
