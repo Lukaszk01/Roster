@@ -90,9 +90,3 @@ a.article-title:hover {
   border-radius: 5px;
   box-shadow: 1px 1px 1px gray;
 }
-.avatar {
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  border: solid black 1px;
-}
