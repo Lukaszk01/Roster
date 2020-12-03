@@ -15,3 +15,7 @@ def testView(request):
 
 def management(request):
     return render(request, 'main/management.html', {'title': 'management'})
+    
+def notifications(request):
+    return render(request, 'main/notifications.html', {'title': 'notifications'})
+
