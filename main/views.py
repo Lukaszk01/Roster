@@ -1,5 +1,5 @@
 from django.shortcuts import render
-import datetime
+from datetime import datetime
 # Create your views here.
 
 
@@ -21,4 +21,5 @@ def management(request):
     
 def notifications(request):
     return render(request, 'main/notifications.html', {'title': 'notifications'})
+
 
