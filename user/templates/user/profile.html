@@ -4,6 +4,25 @@
 
 <div class="button mt-3 mb-3 ml-3 mr-3">
   <a href="{% url 'roster-home' %}"><button >Back</button></a>
+
+
+
+
+  <form action="/your-name/" method="post">
+    <label for="your_name">Your name: </label>
+    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+    <input type="submit" value="OK">
+</form>
+<label for="your_name">Your name: </label>
+<input id="your_name" type="text" name="your_name" maxlength="100" required>
+
+<form action="/your-name/" method="post">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="Submit">
+</form>
+
+
   
 </div>
 <h2>Your Profile</h2>
