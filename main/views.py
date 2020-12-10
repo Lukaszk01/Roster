@@ -21,3 +21,4 @@ def management(request):
     
 def notifications(request):
     return render(request, 'main/notifications.html', {'title': 'notifications'})
+
