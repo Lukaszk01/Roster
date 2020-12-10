@@ -8,15 +8,11 @@
 
 
 
-  <form action="/your-name/" method="post">
-    <label for="your_name">Your name: </label>
-    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
-    <input type="submit" value="OK">
-</form>
+
 <label for="your_name">Your name: </label>
 <input id="your_name" type="text" name="your_name" maxlength="100" required>
 
-<form action="/your-name/" method="post">
+<form action="/name/" method="post">
   {% csrf_token %}
   {{ form }}
   <input type="submit" value="Submit">
@@ -25,7 +21,7 @@
 
   
 </div>
-<h1>{{ your_name }}</h1>
+<h1>{{ form }}</h1>
 <h2>Your Profile</h2>
     <div class="content-section">
       <div class="media">
