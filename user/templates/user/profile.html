@@ -6,11 +6,17 @@
   <a href="{% url 'roster-home' %}"><button >Back</button></a>
 
 </div>
+<!-- <form  method="post">
+  <label for="your_name">Your name: </label>
+  <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+  <input type="submit" value="OK">
+</form> -->
+
 <div class="col-md-8">
   <h2>Home</h2>
   <form method="post">
       {% csrf_token %}
-      {{ form.post }}
+      {{ form.as_p }}
       <br>
       <button type="submit">Submit</button>
   </form>

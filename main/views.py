@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from datetime import datetime
+
+from django.views.generic import TemplateView
+from main.forms import HomeForm
 # Create your views here.
 
 
@@ -22,28 +25,19 @@ def management(request):
 def notifications(request):
     return render(request, 'main/notifications.html', {'title': 'notifications'})
 
-def post(self, request):
-        form = HomeForm(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.user = request.user
-            post.save()
 
-            text = form.cleaned_data['post']
-            form = HomeForm()
-            return redirect('home:home')
+class HomeView(TemplateView):
+    template_name = 'main/profile.html'
 
-        args = {'form': form, 'text': text}
-        return render(request, self.template_name, args)
-
-def get(self, request):
+    def get(self, request):
         form = HomeForm()
-        posts = Post.objects.all().order_by('-created')
-        users = User.objects.exclude(id=request.user.id)
-        friend = Friend.objects.get(current_user=request.user)
-        friends = friend.users.all()
+        return render(request, self.template_name, {'form': form})
 
-        args = {
-            'form': form, 'posts': posts, 'users': users, 'friends': friends
-        }
-        return render(request, self.template_name, args)
+    def post(self, request):
+            form = HomeForm(request.POST)
+            if form.is_valid():
+                text = form.cleaned_data['post']
+
+            args = {'form': form, 'text': text}
+            return render(request, self.template_name, args)
+

@@ -64,7 +64,3 @@ class UserUpdateForm(forms.ModelForm):
       fields = ['username', 'email', 'gender', 'full_name']
 
 
-class HomeForm(forms.Form):
-    post = forms.CharField()
-
-
