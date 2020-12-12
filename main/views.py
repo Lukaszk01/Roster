@@ -7,6 +7,7 @@ from main.forms import HomeForm
 
 
 
+
 def home(request):
     return render(request, 'main/home.html')
 
