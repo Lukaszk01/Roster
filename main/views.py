@@ -3,6 +3,7 @@ from datetime import datetime
 
 from django.views.generic import TemplateView
 from main.forms import HomeForm
+from .forms import InputForm 
 # Create your views here.
 
 
@@ -28,7 +29,7 @@ def notifications(request):
 
 
 class HomeView(TemplateView):
-    template_name = 'main/profile.html'
+    template_name = 'main/about.html'
 
     def get(self, request):
         form = HomeForm()
@@ -42,3 +43,7 @@ class HomeView(TemplateView):
             args = {'form': form, 'text': text}
             return render(request, self.template_name, args)
 
+def home_view(request): 
+    context ={} 
+    context['form']= InputForm() 
+    return render(request, "home.html", context) 
