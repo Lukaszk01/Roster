@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from .models import Customer
+from django.forms import ModelForm
 
 
 class UserRegisterForm(UserCreationForm):
@@ -64,3 +66,7 @@ class UserUpdateForm(forms.ModelForm):
       fields = ['username', 'email', 'gender', 'full_name']
 
 
+class CustomerForm(ModelForm):
+	class Meta:
+		model = Customer
+		fields = '__all__'

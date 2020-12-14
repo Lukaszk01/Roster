@@ -17,12 +17,29 @@
   <form method="post">
       {% csrf_token %}
       {{ form.as_p }}
-      <input required class="post" type="text" name="email" placeholder="text">
+      <!-- <input required class="post" type="text" name="email" placeholder="text"> -->
       <br>
       <button type="submit">Submit</button>
   </form>
-  
+
   <h2>{{ text }}</h2>
+
+
+
+
+  <form action="" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit">
+    
+  </form>
+
+
+
+
+
+
+
 </div>
 <h2>Your Profile</h2>
     <div class="content-section">
