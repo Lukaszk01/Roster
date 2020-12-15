@@ -1,5 +1,8 @@
 from django import forms
 
+from .models import Customer
+from django.forms import ModelForm
+
 class HomeForm(forms.Form):
         post = forms.CharField()
 
@@ -11,3 +14,8 @@ class InputForm(forms.Form):
                      help_text = "Enter 6 digit roll number"
                      ) 
     password = forms.CharField(widget = forms.PasswordInput()) 
+
+class CustomerForm(ModelForm):
+	class Meta:
+		model = Customer
+		fields = '__all__'

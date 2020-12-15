@@ -4,6 +4,7 @@ from datetime import datetime
 from django.views.generic import TemplateView
 from main.forms import HomeForm
 from .forms import InputForm 
+from .forms import CustomerForm
 # Create your views here.
 
 
@@ -47,3 +48,15 @@ def home_view(request):
     context ={} 
     context['form']= InputForm() 
     return render(request, "home.html", context) 
+
+def index(request):
+
+	form = CustomerForm()
+
+	if request.method == 'POST':
+		form = CustomerForm(request.POST)
+		if form.is_valid():
+			form.save()
+			
+	context = {'form':form}
+	return render(request, '', context)
