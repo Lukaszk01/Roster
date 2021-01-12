@@ -1,6 +1,24 @@
 {% extends "main/base.html" %}
 {% block content %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<template>
+  <div id="app-2">
+  <span v-bind:title="message">
+    Hover your mouse over me for a few seconds
+    to see my dynamically bound title!
+  </span>
+</div>
+</template>
 
+<script>
+export default {
+  var app2 = new Vue({
+  el: '#app-2',
+  data: {
+    message: 'You loaded this page on ' + new Date().toLocaleString()
+  }
+})
+}
 </script>
-{{% endblock content %}}
+
+
+{% endblock content %}

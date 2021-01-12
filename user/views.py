@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm
 
 from django.http import HttpResponseRedirect
-from .forms import CustomerForm
-# from .forms import NameForm
+from .forms import NameForm
+
 
 def register(request):
     if request.method == 'POST':
@@ -41,14 +41,36 @@ def profile(request):
     return render(request, 'user/profile.html', context)
 
 
+
+
+def get_name(request):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = NameForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            return HttpResponseRedirect('/thanks/')
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = NameForm()
+
+    return render(request, 'profile.html', {'form': form})
+
 def index(request):
+    questions=None
+    if request.GET.get('search'):
+        search = request.GET.get('search')
+        questions = Queries.objects.filter(query__icontains=search)
 
-	form = CustomerForm()
+        name = request.GET.get('name')
+        query = Queries.object.create(query=search, user_id=name)
+        query.save()
 
-	if request.method == 'POST':
-		form = CustomerForm(request.POST)
-		if form.is_valid():
-			form.save()
-			
-	context = {'form':form}
-	return render(request, 'user/profile.html', context)
+    return render(request, 'basicapp/index.html',{
+        'questions': questions,
+    })

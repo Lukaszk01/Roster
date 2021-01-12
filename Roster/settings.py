@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'cal.apps.CalConfig',
     'schedule',
     'djangobower',
-    'django'
+    'django',
+    'rest_framework'
 
 ]
 
@@ -75,6 +76,12 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 WSGI_APPLICATION = 'Roster.wsgi.application'
 

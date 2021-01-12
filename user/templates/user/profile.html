@@ -14,26 +14,30 @@
 
 <div class="col-md-8">
   <h2>Home</h2>
-  <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <!-- <input required class="post" type="text" name="email" placeholder="text"> -->
-      <br>
-      <button type="submit">Submit</button>
-  </form>
 
-  <h2>{{ text }}</h2>
+  <form method="GET">
+    Question: <input type="text" name="search"><br/>
+    Name: <input type="text" name="name"><br/>
+    <input type="submit" value="Submit" />
+</form><br/><br/>
 
 
+{% for question in questions %}
+<p>{{question}}</p>
+{% endfor %}
 
+<label for="your_name">Your name: </label>
+<input id="your_name" type="text" name="your_name" maxlength="100" required>
 
-  <form action="" method="post">
-    {% csrf_token %}
-    {{form}}
-    <input type="submit">
-    
-  </form>
+<form action="/profile/" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Submit">
+</form>
 
+<p>here is:{{ form }}</p>
+<p>here is:{{ your_name }}</p>
+<br>
 
 
 
