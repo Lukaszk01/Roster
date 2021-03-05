@@ -6,7 +6,6 @@
 
 <script>
 import SimpleForm from '/views/SimpleForm'
-
 export default {
   components: { SimpleForm }
 }

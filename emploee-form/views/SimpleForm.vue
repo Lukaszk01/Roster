@@ -17,23 +17,23 @@
 
       <BaseInput
         v-model="event.title"
-        lable="Title"
-        type="text"
-      />
-
-       <BaseInput
-        v-model="event.description"
-        lable="Description"
+        label="Title"
         type="text"
       />
 
       <BaseInput
-        v-model="event.loaction"
-        lable="Location"
+        v-model="event.description"
+        label="Description"
         type="text"
       />
 
       <h3>Where is your event?</h3>
+
+      <BaseInput
+        v-model="event.location"
+        label="Location"
+        type="text"
+      />
 
       <h3>Are pets allowed?</h3>
       <div>
@@ -75,8 +75,10 @@
         <label>Live music</label>
       </div>
 
-      <button class="button -fill-gradient" type="submit">Submit</button>
+      <button type="submit">Submit</button>
     </form>
+
+    <pre>{{ event }}</pre>
   </div>
 </template>
 
