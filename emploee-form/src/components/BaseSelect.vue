@@ -12,7 +12,7 @@
       v-for="option in options"
       :value="option"
       :key="option"
-      :selected="option === event.category"
+      :selected="option === modelValue"
     >{{ option }}</option>
   </select>
 </template>
