@@ -63,7 +63,6 @@
 
 <script>
 import axios from 'axios'
-
 export default {
   data () {
     return {
@@ -94,7 +93,7 @@ export default {
     }
   },
   methods: {
-    sendForm (e) {
+    sendForm () {
       axios.post('https://my-json-server.typicode.com/Code-Pop/Vue-3-Forms/events', this.event)
         .then(function (response) {
           console.log('Response', response)
