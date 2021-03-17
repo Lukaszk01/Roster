@@ -59,6 +59,8 @@
 
     <pre>{{ event }}</pre>
   </div>
+
+<p>{{ event.title }}</p>
 </template>
 
 <script>
@@ -86,11 +88,13 @@ export default {
           music: false
         }
       },
+
       petOptions: [
         { label: 'Yes', value: 1 },
         { label: 'No', value: 0 }
       ]
     }
+
   },
   methods: {
     sendForm () {
