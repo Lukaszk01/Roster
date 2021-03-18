@@ -1,4 +1,3 @@
-
 <template>
   <input
       type="radio"
