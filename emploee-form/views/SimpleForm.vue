@@ -8,59 +8,68 @@
         label="Select a category"
       />
 
-      <h3>Name & describe your event</h3>
+      <fieldset>
+        <legend>Name & describe your event</legend>
 
-      <BaseInput
-        v-model="event.title"
-        label="Title"
-        type="text"
-      />
-
-      <BaseInput
-        v-model="event.description"
-        label="Description"
-        type="text"
-      />
-
-      <h3>Where is your event?</h3>
-
-      <BaseInput
-        v-model="event.location"
-        label="Location"
-        type="text"
-      />
-
-      <h3>Are pets allowed?</h3>
-      <div>
-        <BaseRadioGroup
-          v-model="event.pets"
-          name="pets"
-          :options="petOptions"
+        <BaseInput
+          v-model="event.title"
+          label="Title"
+          type="text"
+          error="This input has an error!"
         />
-      </div>
 
-      <h3>Extras</h3>
-      <div>
-        <BaseCheckbox
-          v-model="event.extras.catering"
-          label="Catering"
+        <BaseInput
+          v-model="event.description"
+          label="Description"
+          type="text"
         />
-      </div>
+      </fieldset>
 
-      <div>
-        <BaseCheckbox
-          v-model="event.extras.music"
-          label="Live music"
+      <fieldset>
+        <legend>Where is your event?</legend>
+
+        <BaseInput
+          v-model="event.location"
+          label="Location"
+          type="text"
         />
-      </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Pets</legend>
+
+        <p>Are pets allowed?</p>
+        <div>
+          <BaseRadioGroup
+            v-model="event.pets"
+            name="pets"
+            :options="petOptions"
+          />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Extras</legend>
+        <div>
+          <BaseCheckbox
+            v-model="event.extras.catering"
+            label="Catering"
+          />
+        </div>
+
+        <div>
+          <BaseCheckbox
+            v-model="event.extras.music"
+            label="Live music"
+          />
+        </div>
+      </fieldset>
 
       <button type="submit">Submit</button>
     </form>
 
     <pre>{{ event }}</pre>
   </div>
-
-<p>{{ event.title }}</p>
 </template>
 
 <script>
@@ -88,16 +97,14 @@ export default {
           music: false
         }
       },
-
       petOptions: [
         { label: 'Yes', value: 1 },
         { label: 'No', value: 0 }
       ]
     }
-
   },
   methods: {
-    sendForm () {
+    sendForm (e) {
       axios.post('https://my-json-server.typicode.com/Code-Pop/Vue-3-Forms/events', this.event)
         .then(function (response) {
           console.log('Response', response)
@@ -109,3 +116,16 @@ export default {
   }
 }
 </script>
+
+<style>
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+legend {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+</style>
