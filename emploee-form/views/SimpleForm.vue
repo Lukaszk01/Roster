@@ -118,14 +118,5 @@ export default {
 </script>
 
 <style>
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-legend {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 20px;
-}
+
 </style>
