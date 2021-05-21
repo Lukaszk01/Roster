@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm
 
 from django.http import HttpResponseRedirect
-from .forms import NameForm
+from .forms import ProductForm
 
 
 def register(request):
@@ -71,6 +71,16 @@ def index(request):
         query = Queries.object.create(query=search, user_id=name)
         query.save()
 
-    return render(request, 'basicapp/index.html',{
+    return render(request, 'templates/profile.html',{
         'questions': questions,
     })
+
+def product_create_view(request):
+    form = ProductForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    
+    context ={
+        'form': form
+    }
+    return render (request, "user/product_create.html", context)

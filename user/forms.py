@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Customer
+from .models import Product
 from django.forms import ModelForm
 
 
@@ -66,7 +67,10 @@ class UserUpdateForm(forms.ModelForm):
       fields = ['username', 'email', 'gender', 'full_name']
 
 
-class NameForm(forms.Form):
-    your_name = forms.CharField(label='Your name', max_length=100)
+class ProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['title', 'description', 'price']
+
 
 
